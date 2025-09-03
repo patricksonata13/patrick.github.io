@@ -1,0 +1,861 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="pt-BR">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Patrick Sonata - Portf\'f3lio Art\'edstico</title>\
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">\
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">\
+    <style>\
+        * \{\
+            margin: 0;\
+            padding: 0;\
+            box-sizing: border-box;\
+            font-family: 'Poppins', sans-serif;\
+        \}\
+        \
+        :root \{\
+            --primary-color: #ff6b6b;\
+            --secondary-color: #4ecdc4;\
+            --accent-color: #ffd166;\
+            --bg-color: #1a1a2e;\
+            --light-bg: #16213e;\
+            --card-bg: #0f3460;\
+            --text-color: #fff;\
+            --text-light: rgba(255, 255, 255, 0.8);\
+        \}\
+        \
+        body \{\
+            background: var(--bg-color);\
+            color: var(--text-color);\
+            line-height: 1.7;\
+            overflow-x: hidden;\
+        \}\
+        \
+        .container \{\
+            max-width: 1200px;\
+            margin: 0 auto;\
+            padding: 0 20px;\
+        \}\
+        \
+        /* Header e Navega\'e7\'e3o */\
+        header \{\
+            position: fixed;\
+            top: 0;\
+            width: 100%;\
+            z-index: 1000;\
+            background: rgba(26, 26, 46, 0.95);\
+            backdrop-filter: blur(15px);\
+            padding: 15px 0;\
+            transition: all 0.3s ease;\
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);\
+        \}\
+        \
+        header.scrolled \{\
+            padding: 10px 0;\
+            background: rgba(15, 15, 35, 0.98);\
+        \}\
+        \
+        nav \{\
+            display: flex;\
+            justify-content: space-between;\
+            align-items: center;\
+        \}\
+        \
+        .logo \{\
+            font-size: 1.8rem;\
+            font-weight: 700;\
+            color: var(--primary-color);\
+            text-decoration: none;\
+            display: flex;\
+            align-items: center;\
+        \}\
+        \
+        .logo span \{\
+            color: var(--secondary-color);\
+        \}\
+        \
+        .nav-menu \{\
+            display: flex;\
+            list-style: none;\
+            gap: 2rem;\
+        \}\
+        \
+        .nav-link \{\
+            color: var(--text-light);\
+            text-decoration: none;\
+            font-weight: 500;\
+            display: flex;\
+            flex-direction: column;\
+            align-items: center;\
+            transition: all 0.3s ease;\
+            position: relative;\
+        \}\
+        \
+        .nav-link i \{\
+            font-size: 1.2rem;\
+            margin-bottom: 5px;\
+        \}\
+        \
+        .nav-link:hover, .nav-link.active \{\
+            color: var(--primary-color);\
+        \}\
+        \
+        .nav-link::after \{\
+            content: '';\
+            position: absolute;\
+            bottom: -5px;\
+            left: 0;\
+            width: 0;\
+            height: 2px;\
+            background: var(--primary-color);\
+            transition: width 0.3s ease;\
+        \}\
+        \
+        .nav-link:hover::after, .nav-link.active::after \{\
+            width: 100%;\
+        \}\
+        \
+        .nav-link span \{\
+            font-size: 0.85rem;\
+        \}\
+        \
+        /* Hero Section */\
+        .hero \{\
+            min-height: 100vh;\
+            display: flex;\
+            align-items: center;\
+            padding-top: 60px;\
+            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9));\
+            position: relative;\
+            overflow: hidden;\
+            text-align: center;\
+        \}\
+\
+        .hero::before \{\
+            content: '';\
+            position: absolute;\
+            top: 0;\
+            left: 0;\
+            width: 100%;\
+            height: 100%;\
+            background: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;\
+            opacity: 0.15;\
+            z-index: -1;\
+        \}\
+\
+        .hero-content \{\
+            max-width: 800px;\
+            margin: 0 auto;\
+            padding: 20px;\
+        \}\
+\
+        .profile-img-container \{\
+            margin: 0 auto 30px;\
+            width: 220px;\
+            height: 220px;\
+            border-radius: 50%;\
+            overflow: hidden;\
+            border: 4px solid var(--primary-color);\
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);\
+            position: relative;\
+        \}\
+\
+        .profile-img \{\
+            width: 100%;\
+            height: 100%;\
+            object-fit: cover;\
+        \}\
+\
+        .hero-title \{\
+            font-size: 3.5rem;\
+            margin-bottom: 15px;\
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));\
+            -webkit-background-clip: text;\
+            -webkit-text-fill-color: transparent;\
+        \}\
+\
+        .hero-subtitle \{\
+            font-size: 1.8rem;\
+            color: var(--accent-color);\
+            margin-bottom: 20px;\
+            font-weight: 600;\
+        \}\
+\
+        .hero-description \{\
+            font-size: 1.2rem;\
+            color: var(--text-light);\
+            margin-bottom: 40px;\
+            line-height: 1.6;\
+            max-width: 600px;\
+            margin-left: auto;\
+            margin-right: auto;\
+        \}\
+\
+        .cta-button \{\
+            display: inline-block;\
+            padding: 15px 40px;\
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));\
+            color: white;\
+            text-decoration: none;\
+            border-radius: 50px;\
+            font-weight: 600;\
+            font-size: 1.1rem;\
+            transition: all 0.3s ease;\
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);\
+        \}\
+\
+        .cta-button:hover \{\
+            transform: translateY(-3px);\
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);\
+        \}\
+        \
+        /* About Section */\
+        .about \{\
+            padding: 100px 0;\
+            background: var(--light-bg);\
+        \}\
+        \
+        .about-content \{\
+            display: flex;\
+            align-items: center;\
+            gap: 50px;\
+        \}\
+        \
+        .about-text \{\
+            flex: 1;\
+        \}\
+        \
+        .about-title \{\
+            font-size: 2.5rem;\
+            margin-bottom: 20px;\
+            color: var(--primary-color);\
+        \}\
+        \
+        .about-desc \{\
+            color: var(--text-light);\
+            margin-bottom: 25px;\
+            line-height: 1.8;\
+        \}\
+        \
+        .about-highlights \{\
+            margin-top: 30px;\
+        \}\
+        \
+        .highlight-item \{\
+            display: flex;\
+            align-items: center;\
+            margin-bottom: 15px;\
+        \}\
+        \
+        .highlight-icon \{\
+            width: 40px;\
+            height: 40px;\
+            background: var(--primary-color);\
+            border-radius: 50%;\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            margin-right: 15px;\
+            flex-shrink: 0;\
+        \}\
+        \
+        /* Portfolio Section */\
+        .portfolio \{\
+            padding: 100px 0;\
+        \}\
+        \
+        .section-title \{\
+            text-align: center;\
+            margin-bottom: 60px;\
+            font-size: 2.5rem;\
+            color: var(--primary-color);\
+            position: relative;\
+            padding-bottom: 15px;\
+        \}\
+        \
+        .section-title::after \{\
+            content: '';\
+            position: absolute;\
+            bottom: 0;\
+            left: 50%;\
+            transform: translateX(-50%);\
+            width: 100px;\
+            height: 3px;\
+            background: var(--secondary-color);\
+        \}\
+        \
+        .portfolio-filters \{\
+            display: flex;\
+            justify-content: center;\
+            flex-wrap: wrap;\
+            gap: 15px;\
+            margin-bottom: 40px;\
+        \}\
+        \
+        .filter-btn \{\
+            padding: 8px 20px;\
+            background: var(--light-bg);\
+            color: var(--text-light);\
+            border: none;\
+            border-radius: 30px;\
+            cursor: pointer;\
+            transition: all 0.3s ease;\
+        \}\
+        \
+        .filter-btn:hover, .filter-btn.active \{\
+            background: var(--primary-color);\
+            color: #fff;\
+        \}\
+        \
+        .portfolio-grid \{\
+            display: grid;\
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\
+            gap: 30px;\
+        \}\
+        \
+        .portfolio-item \{\
+            background: var(--card-bg);\
+            border-radius: 15px;\
+            overflow: hidden;\
+            transition: transform 0.3s ease, box-shadow 0.3s ease;\
+            position: relative;\
+        \}\
+        \
+        .portfolio-item:hover \{\
+            transform: translateY(-10px);\
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);\
+        \}\
+        \
+        .portfolio-img \{\
+            width: 100%;\
+            height: 250px;\
+            object-fit: cover;\
+            display: block;\
+        \}\
+        \
+        .portfolio-info \{\
+            padding: 25px;\
+        \}\
+        \
+        .portfolio-title \{\
+            font-size: 1.5rem;\
+            margin-bottom: 15px;\
+            color: var(--primary-color);\
+        \}\
+        \
+        .portfolio-subtitle \{\
+            font-size: 1rem;\
+            color: var(--secondary-color);\
+            margin-bottom: 15px;\
+            font-style: italic;\
+        \}\
+        \
+        .portfolio-details \{\
+            background: rgba(0, 0, 0, 0.2);\
+            padding: 15px;\
+            border-radius: 10px;\
+            margin-bottom: 20px;\
+        \}\
+        \
+        .detail-item \{\
+            margin-bottom: 8px;\
+            display: flex;\
+        \}\
+        \
+        .detail-label \{\
+            font-weight: 600;\
+            color: var(--secondary-color);\
+            min-width: 100px;\
+        \}\
+        \
+        .detail-content \{\
+            color: var(--text-light);\
+            flex: 1;\
+        \}\
+        \
+        .portfolio-tags \{\
+            display: flex;\
+            flex-wrap: wrap;\
+            gap: 8px;\
+            margin-bottom: 20px;\
+        \}\
+        \
+        .portfolio-tag \{\
+            background: var(--light-bg);\
+            color: var(--secondary-color);\
+            padding: 5px 12px;\
+            border-radius: 20px;\
+            font-size: 0.8rem;\
+        \}\
+        \
+        .portfolio-link \{\
+            display: inline-block;\
+            color: var(--primary-color);\
+            text-decoration: none;\
+            font-weight: 500;\
+            transition: all 0.3s ease;\
+            position: relative;\
+            cursor: pointer;\
+        \}\
+        \
+        .portfolio-link::after \{\
+            content: '';\
+            position: absolute;\
+            bottom: -3px;\
+            left: 0;\
+            width: 0;\
+            height: 1px;\
+            background: var(--primary-color);\
+            transition: width 0.3s ease;\
+        \}\
+        \
+        .portfolio-link:hover::after \{\
+            width: 100%;\
+        \}\
+        \
+        /* Footer */\
+        footer \{\
+            background: var(--light-bg);\
+            padding: 60px 0 30px;\
+            text-align: center;\
+        \}\
+        \
+        .footer-content \{\
+            display: flex;\
+            flex-direction: column;\
+            align-items: center;\
+        \}\
+        \
+        .social-links \{\
+            display: flex;\
+            justify-content: center;\
+            gap: 20px;\
+            margin-bottom: 30px;\
+        \}\
+        \
+        .social-link \{\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            width: 50px;\
+            height: 50px;\
+            border-radius: 50%;\
+            background: var(--card-bg);\
+            color: var(--primary-color);\
+            font-size: 1.2rem;\
+            transition: all 0.3s ease;\
+        \}\
+        \
+        .social-link:hover \{\
+            background: var(--primary-color);\
+            color: #fff;\
+            transform: translateY(-5px);\
+        \}\
+        \
+        .copyright \{\
+            color: var(--text-light);\
+            font-size: 0.9rem;\
+            margin-top: 20px;\
+        \}\
+        \
+        /* Bot\'e3o do WhatsApp */\
+        .floating-contact \{\
+            position: fixed;\
+            bottom: 25px;\
+            right: 25px;\
+            z-index: 1000;\
+        \}\
+        \
+        .whatsapp-float \{\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            width: 60px;\
+            height: 60px;\
+            background: #25D366;\
+            color: white;\
+            border-radius: 50%;\
+            text-align: center;\
+            font-size: 30px;\
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);\
+            transition: all 0.3s ease;\
+            text-decoration: none;\
+        \}\
+        \
+        .whatsapp-float:hover \{\
+            transform: scale(1.1);\
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);\
+        \}\
+        \
+        /* Responsividade */\
+        @media screen and (max-width: 768px) \{\
+            .nav-menu \{\
+                position: fixed;\
+                bottom: 0;\
+                left: 0;\
+                width: 100%;\
+                background: rgba(0, 0, 0, 0.3);\
+                backdrop-filter: blur(15px);\
+                padding: 15px 0;\
+                justify-content: space-around;\
+                gap: 0;\
+            \}\
+            \
+            .nav-link span \{\
+                display: none;\
+            \}\
+            \
+            .hero-title \{\
+                font-size: 2.5rem;\
+            \}\
+            \
+            .hero-subtitle \{\
+                font-size: 1.5rem;\
+            \}\
+            \
+            .profile-img-container \{\
+                width: 180px;\
+                height: 180px;\
+            \}\
+            \
+            .portfolio-grid \{\
+                grid-template-columns: 1fr;\
+            \}\
+            \
+            .about-content \{\
+                flex-direction: column;\
+            \}\
+        \}\
+        \
+        @media screen and (max-width: 480px) \{\
+            .logo \{\
+                font-size: 1.5rem;\
+            \}\
+            \
+            .hero-title \{\
+                font-size: 2rem;\
+            \}\
+            \
+            .hero-subtitle \{\
+                font-size: 1.3rem;\
+            \}\
+            \
+            .section-title \{\
+                font-size: 2rem;\
+            \}\
+            \
+            .profile-img-container \{\
+                width: 150px;\
+                height: 150px;\
+            \}\
+            \
+            .portfolio-info \{\
+                padding: 15px;\
+            \}\
+            \
+            .portfolio-title \{\
+                font-size: 1.3rem;\
+            \}\
+            \
+            .detail-item \{\
+                flex-direction: column;\
+                margin-bottom: 15px;\
+            \}\
+            \
+            .detail-label \{\
+                margin-bottom: 5px;\
+            \}\
+        \}\
+    </style>\
+</head>\
+<body>\
+    <!-- Cabe\'e7alho com navega\'e7\'e3o -->\
+    <header>\
+        <div class="container">\
+            <nav>\
+                <a href="#" class="logo">Patrick <span>Sonata</span></a>\
+                <ul class="nav-menu">\
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> <span>In\'edcio</span></a></li>\
+                    <li><a href="#portfolio" class="nav-link"><i class="fas fa-briefcase"></i> <span>Portf\'f3lio</span></a></li>\
+                    <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> <span>Sobre</span></a></li>\
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> <span>Contato</span></a></li>\
+                </ul>\
+            </nav>\
+        </div>\
+    </header>\
+\
+    <!-- Hero Section com foto de perfil -->\
+    <section id="home" class="hero">\
+        <div class="container">\
+            <div class="hero-content">\
+                <div class="profile-img-container">\
+                    <!-- Substitua pelo caminho da sua imagem real -->\
+                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80" alt="Patrick Sonata" class="profile-img">\
+                </div>\
+                <h1 class="hero-title">Patrick Sonata</h1>\
+                <p class="hero-subtitle">Da CDD para o Mundo!</p>\
+                <p class="hero-description">Artista multifacetado com experi\'eancia em televis\'e3o, teatro, com\'e9dia e cinema. Minha paix\'e3o pela arte me levou a trabalhar em diversos projetos, sempre buscando inovar e trazer perspectivas \'fanicas.</p>\
+                <a href="#portfolio" class="cta-button">Ver Trabalhos</a>\
+            </div>\
+        </div>\
+    </section>\
+\
+    <!-- About Section -->\
+    <section id="about" class="about">\
+        <div class="container">\
+            <h2 class="section-title">Sobre Mim</h2>\
+            <div class="about-content">\
+                <div class="about-text">\
+                    <p class="about-desc">Sou um artista nascido e criado na Cidade de Deus (CDD), com uma trajet\'f3ria que vai das comunidades do Rio de Janeiro para os palcos e sets de filmagem do Brasil. Minha arte \'e9 influenciada pela riqueza cultural e pela diversidade de experi\'eancias que vivenciei.</p>\
+                    <p class="about-desc">Com forma\'e7\'e3o em Artes C\'eanicas e anos de experi\'eancia no mercado art\'edstico, tenho me dedicado a criar conte\'fado que emociona, diverte e provoca reflex\'e3o, sempre carregando a ess\'eancia e a pot\'eancia das favelas cariocas.</p>\
+                    \
+                    <div class="about-highlights">\
+                        <div class="highlight-item">\
+                            <div class="highlight-icon">\
+                                <i class="fas fa-tv"></i>\
+                            </div>\
+                            <div>\
+                                <h3>Televis\'e3o</h3>\
+                                <p>Experi\'eancia em programas de humor e s\'e9ries</p>\
+                            </div>\
+                        </div>\
+                        <div class="highlight-item">\
+                            <div class="highlight-icon">\
+                                <i class="fas fa-theater-masks"></i>\
+                            </div>\
+                            <div>\
+                                <h3>Teatro</h3>\
+                                <p>Dramaturgia e atua\'e7\'e3o em espet\'e1culos</p>\
+                            </div>\
+                        </div>\
+                        <div class="highlight-item">\
+                            <div class="highlight-icon">\
+                                <i class="fas fa-microphone"></i>\
+                            </div>\
+                            <div>\
+                                <h3>Com\'e9dia</h3>\
+                                <p>Stand-up e shows de humor</p>\
+                            </div>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>\
+    </section>\
+\
+    <!-- Portfolio Section -->\
+    <section id="portfolio" class="portfolio">\
+        <div class="container">\
+            <h2 class="section-title">Meus Trabalhos</h2>\
+            \
+            <div class="portfolio-filters">\
+                <button class="filter-btn active" data-filter="all">Todos</button>\
+                <button class="filter-btn" data-filter="tv">Televis\'e3o</button>\
+                <button class="filter-btn" data-filter="theater">Teatro</button>\
+                <button class="filter-btn" data-filter="comedy">Humor</button>\
+                <button class="filter-btn" data-filter="film">Cinema</button>\
+            </div>\
+            \
+            <div class="portfolio-grid">\
+                <!-- S\'e9rie Pablo & Luis\'e3o -->\
+                <div class="portfolio-item" data-category="tv">\
+                    <img src="https://images.unsplash.com/photo-1609743522653-52354461eb27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHZ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80" alt="S\'e9rie Pablo & Luis\'e3o" class="portfolio-img">\
+                    <div class="portfolio-info">\
+                        <h3 class="portfolio-title">S\'e9rie Pablo & Luis\'e3o</h3>\
+                        <p class="portfolio-subtitle">(2025)</p>\
+                        <div class="portfolio-details">\
+                            <div class="detail-item">\
+                                <span class="detail-label">Autores:</span>\
+                                <span class="detail-content">Paulo Vieira, Maur\'edcio Rizzo</span>\
+                            </div>\
+                            <div class="detail-item">\
+                                <span class="detail-label">Dire\'e7\'e3o:</span>\
+                                <span class="detail-content">Jo\'e3o Gomez</span>\
+                            </div>\
+                            <div class="detail-item">\
+                                <span class="detail-label">Roteiro:</span>\
+                                <span class="detail-content">Bia Braune, Ca\'edto Mainier, Nathalia Cruz e Patrick Sonata</span>\
+                            </div>\
+                        </div>\
+                        <div class="portfolio-tags">\
+                            <span class="portfolio-tag">S\'e9rie</span>\
+                            <span class="portfolio-tag">Com\'e9dia</span>\
+                            <span class="portfolio-tag">Televis\'e3o</span>\
+                        </div>\
+                        <a href="#" class="portfolio-link">Ver detalhes 
+\f1 \uc0\u8594 
+\f0 </a>\
+                    </div>\
+                </div>\
+                \
+                <!-- Programa Zorra -->\
+                <div class="portfolio-item" data-category="tv comedy">\
+                    <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHR2JTIwc2hvd3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Captura de tela do Programa Zorra da TV Globo" class="portfolio-img">\
+                    <div class="portfolio-info">\
+                        <h3 class="portfolio-title">Programa Zorra</h3>\
+                        <p class="portfolio-subtitle">(2019-2021)</p>\
+                        <div class="portfolio-details">\
+                            <div class="detail-item">\
+                                <span class="detail-label">Reda\'e7\'e3o Final:</span>\
+                                <span class="detail-content">Marcius Melhem, Celso Taddei, Gabriela Amaral, Nelito Fernandes e Marta Mendon\'e7a</span>\
+                            </div>\
+                            <div class="detail-item">\
+                                <span class="detail-label">Dire\'e7\'e3o Geral:</span>\
+                                <span class="detail-content">Mauro Farias</span>\
+                            </div>\
+                        </div>\
+                        <div class="portfolio-tags">\
+                            <span class="portfolio-tag">TV</span>\
+                            <span class="portfolio-tag">Humor</span>\
+                            <span class="portfolio-tag">Programa</span>\
+                        </div>\
+                        <a href="#" class="portfolio-link">Ver detalhes 
+\f1 \uc0\u8594 
+\f0 </a>\
+                    </div>\
+                </div>\
+                \
+                <!-- Espet\'e1culo Pelada -->\
+                <div class="portfolio-item" data-category="theater">\
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRoZWF0ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=80" alt="Espet\'e1culo teatral Pelada" class="portfolio-img">\
+                    <div class="portfolio-info">\
+                        <h3 class="portfolio-title">Espet\'e1culo Pelada - A Hora da Gaymada</h3>\
+                        <p class="portfolio-subtitle">(2022)</p>\
+                        <div class="portfolio-details">\
+                            <div class="detail-item">\
+                                <span class="detail-label">Dire\'e7\'e3o:</span>\
+                                <span class="detail-content">Orlando Caldeira</span>\
+                            </div>\
+                            <div class="detail-item">\
+                                <span class="detail-label">Roteiro e Dramaturgia:</span>\
+                                <span class="detail-content">Patrick Sonata</span>\
+                            </div>\
+                        </div>\
+                        <div class="portfolio-tags">\
+                            <span class="portfolio-tag">Teatro</span>\
+                            <span class="portfolio-tag">Espet\'e1culo</span>\
+                            <span class="portfolio-tag">Com\'e9dia</span>\
+                        </div>\
+                        <a href="#" class="portfolio-link">Ver detalhes 
+\f1 \uc0\u8594 
+\f0 </a>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>\
+    </section>\
+\
+    <!-- Footer -->\
+    <footer id="contact">\
+        <div class="container">\
+            <div class="footer-content">\
+                <div class="social-links">\
+                    <a href="https://www.linkedin.com/in/patrick-sonata-7b4b2a241/" target="_blank" class="social-link">\
+                        <i class="fab fa-linkedin-in"></i>\
+                    </a>\
+                    <a href="https://github.com/PatrickSonata13" target="_blank" class="social-link">\
+                        <i class="fab fa-github"></i>\
+                    </a>\
+                    <a href="https://www.instagram.com/patrick_sonata/" target="_blank" class="social-link">\
+                        <i class="fab fa-instagram"></i>\
+                    </a>\
+                </div>\
+                \
+                <p class="copyright">\'a9 2023 Patrick Sonata - Todos os direitos reservados</p>\
+                <p class="copyright">Da CDD para o Mundo!</p>\
+            </div>\
+        </div>\
+    </footer>\
+\
+    <!-- Bot\'e3o flutuante de contato -->\
+    <div class="floating-contact">\
+        <a href="https://wa.me/5521983976299" target="_blank" class="whatsapp-float">\
+            <i class="fab fa-whatsapp"></i>\
+        </a>\
+    </div>\
+\
+    <script>\
+        // Script para destacar a aba ativa durante a rolagem\
+        document.addEventListener('DOMContentLoaded', function() \{\
+            const sections = document.querySelectorAll('section');\
+            const navLinks = document.querySelectorAll('.nav-link');\
+            const header = document.querySelector('header');\
+            const filterButtons = document.querySelectorAll('.filter-btn');\
+            const portfolioItems = document.querySelectorAll('.portfolio-item');\
+            \
+            // Header scroll effect\
+            window.addEventListener('scroll', function() \{\
+                if (window.scrollY > 50) \{\
+                    header.classList.add('scrolled');\
+                \} else \{\
+                    header.classList.remove('scrolled');\
+                \}\
+                \
+                // Active nav link\
+                let current = '';\
+                sections.forEach(section => \{\
+                    const sectionTop = section.offsetTop;\
+                    const sectionHeight = section.clientHeight;\
+                    \
+                    if (pageYOffset >= (sectionTop - 200)) \{\
+                        current = section.getAttribute('id');\
+                    \}\
+                \});\
+                \
+                navLinks.forEach(link => \{\
+                    link.classList.remove('active');\
+                    if (link.getAttribute('href').substring(1) === current) \{\
+                        link.classList.add('active');\
+                    \}\
+                \});\
+            \});\
+            \
+            // Suavizar a rolagem ao clicar nos links\
+            navLinks.forEach(link => \{\
+                link.addEventListener('click', function(e) \{\
+                    e.preventDefault();\
+                    \
+                    const targetId = this.getAttribute('href').substring(1);\
+                    const targetSection = document.getElementById(targetId);\
+                    \
+                    window.scrollTo(\{\
+                        top: targetSection.offsetTop - 80,\
+                        behavior: 'smooth'\
+                    \});\
+                \});\
+            \});\
+            \
+            // Filtros do portf\'f3lio\
+            filterButtons.forEach(button => \{\
+                button.addEventListener('click', function() \{\
+                    // Remover classe active de todos os bot\'f5es\
+                    filterButtons.forEach(btn => btn.classList.remove('active'));\
+                    \
+                    // Adicionar classe active ao bot\'e3o clicado\
+                    this.classList.add('active');\
+                    \
+                    // Obter o filtro\
+                    const filter = this.getAttribute('data-filter');\
+                    \
+                    // Filtrar itens\
+                    portfolioItems.forEach(item => \{\
+                        if (filter === 'all' || item.getAttribute('data-category').includes(filter)) \{\
+                            item.style.display = 'block';\
+                        \} else \{\
+                            item.style.display = 'none';\
+                        \}\
+                    \});\
+                \});\
+            \});\
+        \});\
+    </script>\
+</body>\
+</html>}
